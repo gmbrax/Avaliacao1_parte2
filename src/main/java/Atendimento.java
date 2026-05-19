@@ -1,5 +1,10 @@
+import java.time.LocalDateTime;
+
 public class Atendimento {
     private AtendimentoEstado estado;
+    private LocalDateTime dataAgendamento;
+    private Tutor tutor;
+    private Animal animal;
     public Atendimento() {
         this.estado = AtendimentoEstadoAgendado.getInstance();
     }

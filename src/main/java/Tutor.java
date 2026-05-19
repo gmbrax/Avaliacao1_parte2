@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -8,6 +10,7 @@ public class Tutor implements Observer {
     private String email;
     private String RG;
     private String CPF;
+    private List<Animal> animais =  new ArrayList<>();
 
     private String ultimaNotificacao;
 
@@ -58,9 +61,12 @@ public class Tutor implements Observer {
 
     public void atender(Atendimento atendimento){}
 
+    public void adicionarAnimal(Animal animal){
+        animais.add(animal);
+    }
 
     @Override
     public void update(Observable o, Object arg) {
-        this.ultimaNotificacao = this.nome + " teve uma atualização no seu atendimento " + o.toString();
+            this.ultimaNotificacao = this.nome + " teve uma atualização no seu atendimento " + o.toString();
     }
 }

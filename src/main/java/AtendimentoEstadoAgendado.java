@@ -14,6 +14,8 @@ public class AtendimentoEstadoAgendado extends AtendimentoEstado{
 
     @Override
     public boolean cancelar(Atendimento atendimento){
+        setChanged();
+        notifyObservers();
         atendimento.setEstado(AtendimentoEstadoCancelado.getInstance());
         return true;
     }
@@ -25,6 +27,8 @@ public class AtendimentoEstadoAgendado extends AtendimentoEstado{
 
     @Override
     public boolean continuar(Atendimento atendimento){
+        setChanged();
+        notifyObservers();
         atendimento.setEstado(AtendimentoEstadoEmAndamento.getInstance());
         return true;
     }

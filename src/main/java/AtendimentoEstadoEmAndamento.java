@@ -14,11 +14,15 @@ public class AtendimentoEstadoEmAndamento extends AtendimentoEstado{
 
     @Override
     public String getEstado() {
+
         return "Em Andamento";
     }
 
     @Override
     public boolean finalizar(Atendimento atendimento){
+        setChanged();
+        notifyObservers();
+        atendimento.setEstado(AtendimentoEstadoFinalizado.getInstance());
         return true;
     }
 

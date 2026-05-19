@@ -1,4 +1,6 @@
-public abstract class AtendimentoEstado {
+import java.util.Observable;
+
+public abstract class AtendimentoEstado extends Observable {
 
 
 
@@ -15,5 +17,11 @@ public abstract class AtendimentoEstado {
     }
     public boolean cancelar(Atendimento atendimento){
         return false;
+    }
+
+
+    @Override
+    public String toString() {
+        return this.getEstado();
     }
 }

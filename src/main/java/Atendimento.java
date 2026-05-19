@@ -1,6 +1,5 @@
 public class Atendimento {
     private AtendimentoEstado estado;
-
     public Atendimento() {
         this.estado = AtendimentoEstadoAgendado.getInstance();
     }
@@ -20,5 +19,4 @@ public class Atendimento {
     public boolean finalizar(){
         return estado.finalizar(this);
     }
-
 }

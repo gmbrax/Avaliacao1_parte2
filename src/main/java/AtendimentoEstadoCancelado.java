@@ -11,6 +11,8 @@ public class AtendimentoEstadoCancelado extends AtendimentoEstado{
 
     @Override
     public String getEstado() {
+        setChanged();
+        notifyObservers();
         return "Cancelado";
     }
 }
